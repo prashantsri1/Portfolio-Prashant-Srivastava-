@@ -1,111 +1,204 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+@import "tailwindcss";
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+/* ======== Netflix Theme Tokens ======== */
+@theme {
+  --color-nf-black: #141414;
+  --color-nf-darker: #0a0a0a;
+  --color-nf-dark: #1a1a1a;
+  --color-nf-red: #E50914;
+  --color-nf-red-hover: #f6121d;
+  --color-nf-gray: #2f2f2f;
+  --color-nf-light-gray: #b3b3b3;
+  --color-nf-white: #e5e5e5;
+  --color-nf-text-muted: #808080;
+  --color-nf-card-hover: #252525;
+  --font-family-netflix: 'Bebas Neue', sans-serif;
+  --font-family-sans: 'Inter', system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+/* ======== Global Reset ======== */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   margin: 0;
+  padding: 0;
+  background: var(--color-nf-black);
+  color: var(--color-nf-white);
+  font-family: var(--font-family-sans);
+  overflow-x: hidden;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+/* ======== Scrollbar ======== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-nf-darker); }
+::-webkit-scrollbar-thumb { background: var(--color-nf-gray); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #444; }
+
+/* ======== Netflix Logo ======== */
+.netflix-logo {
+  font-family: var(--font-family-netflix);
+  color: var(--color-nf-red);
+  letter-spacing: 2px;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
+/* ======== Hero Gradient ======== */
+.hero-gradient-bottom {
+  background: linear-gradient(to bottom, transparent 0%, rgba(20, 20, 20, 0.6) 40%, var(--color-nf-black) 100%);
+}
+
+/* ======== Intro Animation ======== */
+.intro-text {
+  animation: introName 2.5s ease-out forwards;
+}
+
+@keyframes introName {
+  0% { opacity: 0; transform: scale(0.5); letter-spacing: -8px; filter: blur(10px); }
+  30% { opacity: 1; filter: blur(0px); }
+  60% { transform: scale(1.05); letter-spacing: 12px; }
+  80% { transform: scale(1); letter-spacing: 10px; }
+  100% { opacity: 1; transform: scale(1); letter-spacing: 10px; }
+}
+
+/* ======== Generic Keyframes ======== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes profilePop {
+  from { opacity: 0; transform: scale(0.7); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(229,9,20,0.4); }
+  50% { box-shadow: 0 0 20px rgba(229,9,20,0.8); }
+}
+
+/* ======== Category Card ======== */
+.category-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.category-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+  z-index: 10;
+}
+
+/* ======== Content Row Scroll ======== */
+.content-row-scroll {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.content-row-scroll::-webkit-scrollbar { height: 0; }
+.content-row-scroll > * { scroll-snap-align: start; }
+
+/* ======== Skill Card Hover ======== */
+.skill-card {
+  transition: all 0.3s ease;
+}
+.skill-card:hover {
+  border-color: rgba(229,9,20,0.5);
+  background: var(--color-nf-card-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+.skill-card:hover .skill-logo {
+  transform: scale(1.15);
+}
+
+/* ======== Red Underline Heading ======== */
+.section-heading-underline {
+  position: relative;
+  display: inline-block;
+}
+.section-heading-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--color-nf-red);
+  border-radius: 2px;
+}
+
+/* ======== Project Card ======== */
+.project-card {
+  transition: all 0.3s ease;
+}
+.project-card:hover {
+  border-color: rgba(229,9,20,0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+
+/* ======== Timeline ======== */
+.timeline-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.timeline-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+
+/* ======== Music Card ======== */
+.music-card {
+  transition: all 0.3s ease;
+}
+.music-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+.music-card:hover .music-play-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+.music-play-icon {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.3s ease;
+}
+
+/* ======== Book Card ======== */
+.book-card {
+  transition: all 0.3s ease;
+}
+.book-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+.book-card:hover .book-cover {
+  transform: scale(1.05);
+}
+
+/* ======== Blog Card ======== */
+.blog-card {
+  transition: all 0.3s ease;
+}
+.blog-card:hover {
+  border-color: rgba(229,9,20,0.4);
+  background: var(--color-nf-card-hover);
+  transform: translateY(-2px);
+}
+
+/* ======== Responsive helpers ======== */
+@media (max-width: 768px) {
+  .category-card:hover {
+    transform: scale(1.03);
   }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
 }
