@@ -34,6 +34,8 @@ export const personalInfo = {
   email: "prashantsri1974@gmail.com",
   phone: "+91 7860916149",
   linkedin: "https://www.linkedin.com/in/prashant-srivastava-315168302",
+  github: "https://github.com/prashantsri1",
+  resume: "https://drive.google.com/file/d/1hZgCiYh2yojEcJVos8yFPkuEHDW34iEy/view?usp=drivesdk",
 };
 
 // ======== Profiles ========
@@ -95,6 +97,7 @@ export const navLinks = [
   { label: "Skills", path: "/skills" },
   { label: "Projects", path: "/projects" },
   { label: "Hire Me", path: "/contact" },
+  { label: "Resume", path: "https://drive.google.com/file/d/1hZgCiYh2yojEcJVos8yFPkuEHDW34iEy/view?usp=drivesdk", external: true },
 ];
 
 // ======== Tech Skills ========
@@ -102,32 +105,32 @@ export const skills = [
   {
     category: "Frontend",
     items: [
-      { name: "JavaScript (ES6+)", desc: "Core Programming Language", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-      { name: "ReactJS", desc: "UI Component Library", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-      { name: "HTML5", desc: "Markup Language", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-      { name: "CSS3", desc: "Styling Language", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-      { name: "TailwindCSS", desc: "Utility-First CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
-      { name: "Redux", desc: "State Management", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
+      { name: "JavaScript (ES6+)", desc: "Core Programming Language", logo: "/tech/javascript.svg" },
+      { name: "ReactJS", desc: "UI Component Library", logo: "/tech/react.svg" },
+      { name: "HTML5", desc: "Markup Language", logo: "/tech/html5.svg" },
+      { name: "CSS3", desc: "Styling Language", logo: "/tech/css3.svg" },
+      { name: "TailwindCSS", desc: "Utility-First CSS", logo: "/tech/tailwindcss.svg" },
+      { name: "Redux", desc: "State Management", logo: "/tech/redux.svg" },
     ],
   },
   {
     category: "Backend & Database",
     items: [
-      { name: "Node.js", desc: "Backend Runtime", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-      { name: "Express.js", desc: "Web Framework", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
-      { name: "MongoDB", desc: "NoSQL Database", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-      { name: "Firebase", desc: "Backend-as-a-Service", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
+      { name: "Node.js", desc: "Backend Runtime", logo: "/tech/nodejs.svg" },
+      { name: "Express.js", desc: "Web Framework", logo: "/tech/express.svg" },
+      { name: "MongoDB", desc: "NoSQL Database", logo: "/tech/mongodb.svg" },
+      { name: "Firebase", desc: "Backend-as-a-Service", logo: "/tech/firebase.svg" },
     ],
   },
   {
     category: "Tools & Platforms",
     items: [
-      { name: "Git", desc: "Version Control", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-      { name: "Bitbucket", desc: "Code Repository", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bitbucket/bitbucket-original.svg" },
-      { name: "VS Code", desc: "Code Editor", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
-      { name: "Netlify", desc: "Frontend Deployment", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/netlify/netlify-original.svg" },
-      { name: "Jira", desc: "Project Management", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" },
-      { name: "Chrome DevTools", desc: "Debugging & Performance", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg" },
+      { name: "Git", desc: "Version Control", logo: "/tech/git.svg" },
+      { name: "Bitbucket", desc: "Code Repository", logo: "/tech/bitbucket.svg" },
+      { name: "VS Code", desc: "Code Editor", logo: "/tech/vscode.svg" },
+      { name: "Netlify", desc: "Frontend Deployment", logo: "/tech/netlify.svg" },
+      { name: "Jira", desc: "Project Management", logo: "/tech/jira.svg" },
+      { name: "Chrome DevTools", desc: "Debugging & Performance", logo: "/tech/chrome.svg" },
     ],
   },
 ];
@@ -138,7 +141,7 @@ export const experience = [
     id: 1,
     company: "MANUASTRO LLP",
     role: "Frontend Developer | Product Manager",
-    period: "Nov 2025 — Present",
+    period: "Nov 2025 — June 2026",
     tech: "React, Context API, RESTful APIs, Jira, Trello",
     highlights: [
       "Spearheaded migration from React Class to Functional Components, achieving 30% faster load times.",
@@ -159,7 +162,7 @@ export const projects = [
     tech: ["ReactJS", "Firebase", "TailwindCSS", "React Router"],
     description: "A comprehensive HRMS portal for complete office control. Features include employee attendance tracking, payroll management, timesheet logging, task assignment & tracking, leave management system, performance logs, document management, and role-based access control for HR admins and employees.",
     features: ["Attendance Tracker", "Payroll System", "Task Management", "Leave Management", "Performance Logs", "Document Hub"],
-    liveUrl: null,
+    liveUrl: 'https://hrmsportalproject.netlify.app/',
     codeUrl: "https://bitbucket.org/johnsnow2004/hrms-portal/src/main/",
     featured: true,
   },

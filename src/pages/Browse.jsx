@@ -24,7 +24,7 @@ export default function Browse() {
       </div>
 
       {/* Top Picks Row */}
-      <div className="relative z-10 -mt-8 md:-mt-16">
+      <div className="relative z-10 -mt-6 md:-mt-10">
         <ContentRow title={`Today's Top Picks for ${profile}`}>
           {topPicks.map((item) => (
             <CategoryCard

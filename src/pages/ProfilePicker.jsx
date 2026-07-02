@@ -28,7 +28,7 @@ export default function ProfilePicker({ onSelect }) {
       </motion.h1>
 
       <motion.div
-        className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-10"
+        className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 md:gap-10 max-w-[600px] mx-auto justify-items-center"
         variants={container}
         initial="hidden"
         animate="show"
@@ -40,12 +40,12 @@ export default function ProfilePicker({ onSelect }) {
             onClick={() => onSelect(p.id)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="flex flex-col items-center gap-3 cursor-pointer group"
+            className="flex flex-col items-center gap-2 cursor-pointer group"
           >
-            <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-md overflow-hidden border-2 border-transparent group-hover:border-white transition-colors duration-300">
+            <div className="w-20 h-20 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-md overflow-hidden border-2 border-transparent group-hover:border-white transition-colors duration-300">
               <img src={p.avatar} alt={p.name} className="w-full h-full object-cover" loading="eager" />
             </div>
-            <span className="text-sm sm:text-base md:text-lg text-nf-light-gray group-hover:text-white transition-colors">
+            <span className="text-xs sm:text-base md:text-lg text-nf-light-gray group-hover:text-white transition-colors">
               {p.name}
             </span>
           </motion.button>

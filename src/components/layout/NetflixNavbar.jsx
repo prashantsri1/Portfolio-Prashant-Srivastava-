@@ -46,19 +46,34 @@ export default function NetflixNavbar() {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-1 lg:gap-2">
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.path}
-                to={link.path}
-                className={({ isActive }) =>
-                  `px-3 py-2 text-[13px] font-medium rounded transition-colors ${
-                    isActive ? 'text-white font-bold' : 'text-nf-light-gray hover:text-white'
-                  }`
-                }
-              >
-                {link.label}
-              </NavLink>
-            ))}
+            {navLinks.map((link) => {
+              if (link.external) {
+                return (
+                  <a
+                    key={link.label}
+                    href={link.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-2 text-[13px] font-medium rounded text-nf-light-gray hover:text-white transition-colors cursor-pointer"
+                  >
+                    {link.label}
+                  </a>
+                );
+              }
+              return (
+                <NavLink
+                  key={link.path}
+                  to={link.path}
+                  className={({ isActive }) =>
+                    `px-3 py-2 text-[13px] font-medium rounded transition-colors ${
+                      isActive ? 'text-white font-bold' : 'text-nf-light-gray hover:text-white'
+                    }`
+                  }
+                >
+                  {link.label}
+                </NavLink>
+              );
+            })}
           </div>
 
           {/* Right section */}
@@ -145,20 +160,36 @@ export default function NetflixNavbar() {
                 </button>
               </div>
               <div className="flex flex-col px-6">
-                {navLinks.map((link) => (
-                  <NavLink
-                    key={link.path}
-                    to={link.path}
-                    onClick={() => setDrawerOpen(false)}
-                    className={({ isActive }) =>
-                      `py-4 text-lg font-medium border-b border-nf-gray/10 transition-colors ${
-                        isActive ? 'text-nf-red' : 'text-nf-light-gray hover:text-white'
-                      }`
-                    }
-                  >
-                    {link.label}
-                  </NavLink>
-                ))}
+                {navLinks.map((link) => {
+                  if (link.external) {
+                    return (
+                      <a
+                        key={link.label}
+                        href={link.path}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setDrawerOpen(false)}
+                        className="py-4 text-lg font-medium border-b border-nf-gray/10 text-nf-light-gray hover:text-white transition-colors cursor-pointer"
+                      >
+                        {link.label}
+                      </a>
+                    );
+                  }
+                  return (
+                    <NavLink
+                      key={link.path}
+                      to={link.path}
+                      onClick={() => setDrawerOpen(false)}
+                      className={({ isActive }) =>
+                        `py-4 text-lg font-medium border-b border-nf-gray/10 transition-colors ${
+                          isActive ? 'text-nf-red' : 'text-nf-light-gray hover:text-white'
+                        }`
+                      }
+                    >
+                      {link.label}
+                    </NavLink>
+                  );
+                })}
                 <button
                   onClick={() => { setDrawerOpen(false); handleSwitchProfile(); }}
                   className="py-4 text-lg font-medium text-left text-nf-red cursor-pointer border-b border-nf-gray/10"

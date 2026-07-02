@@ -10,12 +10,14 @@ const methods = [
   { label: 'Email', value: personalInfo.email, href: `mailto:${personalInfo.email}`, icon: '📧', color: 'from-blue-500/20 to-blue-600/10' },
   { label: 'Phone', value: personalInfo.phone, href: `tel:${personalInfo.phone}`, icon: '📱', color: 'from-green-500/20 to-green-600/10' },
   { label: 'LinkedIn', value: 'Prashant Srivastava', href: personalInfo.linkedin, icon: '💼', color: 'from-sky-500/20 to-sky-600/10', external: true },
+  { label: 'GitHub', value: 'prashantsri1', href: personalInfo.github, icon: '🐙', color: 'from-purple-500/20 to-purple-600/10', external: true },
+  { label: 'Resume', value: 'View Resume', href: personalInfo.resume, icon: '📄', color: 'from-red-500/20 to-red-600/10', external: true }
 ];
 
 export default function ContactPage() {
   return (
     <PageWrapper>
-      <div className="px-6 sm:px-8 md:px-12 lg:px-16 max-w-[900px] mx-auto py-16 md:py-24">
+      <div className="px-6 sm:px-8 md:px-12 lg:px-16 max-w-[1100px] mx-auto py-16 md:py-24">
         {/* Heading */}
         <motion.div
           className="text-center mb-12 md:mb-16"
@@ -32,7 +34,7 @@ export default function ContactPage() {
         </motion.div>
 
         {/* Contact cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5 mb-12">
           {methods.map((m, i) => (
             <motion.a
               key={m.label}

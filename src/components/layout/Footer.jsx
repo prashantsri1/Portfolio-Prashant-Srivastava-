@@ -19,6 +19,12 @@ export default function Footer() {
           <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="text-nf-text-muted text-sm hover:text-nf-white transition-colors">
             LinkedIn
           </a>
+          <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="text-nf-text-muted text-sm hover:text-nf-white transition-colors">
+            GitHub
+          </a>
+          <a href={personalInfo.resume} target="_blank" rel="noopener noreferrer" className="text-nf-text-muted text-sm hover:text-nf-white transition-colors">
+            Resume
+          </a>
         </div>
 
         {/* Copyright */}
