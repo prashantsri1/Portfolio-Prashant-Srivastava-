@@ -10,7 +10,7 @@ export default function HeroBanner() {
   const navigate = useNavigate();
 
   return (
-    <div className="relative w-full h-[60vh] min-h-[440px] md:h-[75vh] md:min-h-[520px] md:max-h-[700px] overflow-hidden">
+    <div className="relative w-full h-[55vh] min-h-[400px] md:h-[75vh] md:min-h-[520px] md:max-h-[700px] overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0d0d0d] via-[#1a1a2e] to-[#16213e]" />
 
@@ -30,8 +30,8 @@ export default function HeroBanner() {
       <div className="absolute bottom-0 left-0 right-0 h-64 hero-gradient-bottom z-10" />
 
       {/* Content */}
-      <div className="relative z-20 h-full flex flex-col pt-20 md:pt-28 pb-16 md:pb-28 px-6 sm:px-8 md:px-12 lg:px-16 max-w-[1400px] mx-auto">
-        <div className="mt-auto w-full">
+      <div className="relative z-20 h-full flex flex-col justify-center md:justify-end pt-20 md:pt-28 pb-12 md:pb-28 px-6 sm:px-8 md:px-12 lg:px-16 max-w-[1400px] mx-auto">
+        <div className="mt-0 md:mt-auto w-full">
           <motion.div
             className="flex items-center gap-3 mb-4 sm:mb-6"
             initial={{ opacity: 0, x: -20 }}
@@ -61,7 +61,7 @@ export default function HeroBanner() {
           </motion.p>
 
           <motion.p
-            className="text-sm sm:text-base text-nf-light-gray max-w-xl mb-6 sm:mb-8 leading-relaxed"
+            className="text-xs sm:text-sm md:text-base text-nf-light-gray max-w-xl mb-4 sm:mb-8 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.65, duration: 0.6 }}
@@ -70,16 +70,16 @@ export default function HeroBanner() {
           </motion.p>
 
           <motion.div
-            className="flex flex-wrap gap-2.5 sm:gap-4"
+            className="flex flex-wrap gap-2 sm:gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.6 }}
           >
             <button
               onClick={() => navigate('/projects')}
-              className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-8 sm:py-3 rounded-md font-bold text-sm sm:text-base bg-white text-nf-black hover:bg-white/85 transition-colors cursor-pointer shadow-lg"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-2 sm:px-6 sm:py-2.5 md:px-8 md:py-3 rounded-md font-bold text-xs sm:text-sm md:text-base bg-white text-nf-black hover:bg-white/85 transition-colors cursor-pointer shadow-lg"
             >
-              <svg className="w-5 h-5 sm:w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              <svg className="w-4 h-4 sm:w-5 h-5 md:w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
               View Projects
             </button>
 
@@ -87,9 +87,9 @@ export default function HeroBanner() {
               href={personalInfo.resume}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-8 sm:py-3 rounded-md font-bold text-sm sm:text-base bg-nf-red text-white hover:bg-nf-red-hover transition-colors shadow-lg cursor-pointer"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-2 sm:px-6 sm:py-2.5 md:px-8 md:py-3 rounded-md font-bold text-xs sm:text-sm md:text-base bg-nf-red text-white hover:bg-nf-red-hover transition-colors shadow-lg cursor-pointer"
             >
-              <svg className="w-4 h-4 sm:w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <svg className="w-3.5 h-3.5 sm:w-4 h-4 md:w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
               Resume
@@ -99,9 +99,9 @@ export default function HeroBanner() {
               href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-8 sm:py-3 rounded-md font-bold text-sm sm:text-base bg-nf-gray/80 text-white hover:bg-nf-gray transition-colors shadow-lg"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-2 sm:px-6 sm:py-2.5 md:px-8 md:py-3 rounded-md font-bold text-xs sm:text-sm md:text-base bg-nf-gray/80 text-white hover:bg-nf-gray transition-colors shadow-lg"
             >
-              <svg className="w-4 h-4 sm:w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <svg className="w-3.5 h-3.5 sm:w-4 h-4 md:w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
               </svg>
               More Info
@@ -112,7 +112,7 @@ export default function HeroBanner() {
 
       {/* Maturity badge */}
       <motion.div
-        className="absolute right-0 bottom-28 md:bottom-36 z-20"
+        className="hidden sm:block absolute right-0 bottom-28 md:bottom-36 z-20"
         initial={{ opacity: 0, x: 30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1.1, duration: 0.5 }}
